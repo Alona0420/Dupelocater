@@ -1,0 +1,646 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		495EA2352B63745E00A1EB65 /* DupelocaterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495EA2342B63745E00A1EB65 /* DupelocaterApp.swift */; };
+		495EA2372B63745E00A1EB65 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495EA2362B63745E00A1EB65 /* ContentView.swift */; };
+		495EA2392B63746100A1EB65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 495EA2382B63746100A1EB65 /* Assets.xcassets */; };
+		495EA23C2B63746100A1EB65 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 495EA23B2B63746100A1EB65 /* Preview Assets.xcassets */; };
+		495EA23E2B63746100A1EB65 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495EA23D2B63746100A1EB65 /* Persistence.swift */; };
+		495EA2412B63746100A1EB65 /* Dupelocater.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 495EA23F2B63746100A1EB65 /* Dupelocater.xcdatamodeld */; };
+		495EA24B2B63746100A1EB65 /* DupelocaterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495EA24A2B63746100A1EB65 /* DupelocaterTests.swift */; };
+		495EA2552B63746100A1EB65 /* DupelocaterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495EA2542B63746100A1EB65 /* DupelocaterUITests.swift */; };
+		495EA2572B63746100A1EB65 /* DupelocaterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495EA2562B63746100A1EB65 /* DupelocaterUITestsLaunchTests.swift */; };
+		495EA2642B6375A400A1EB65 /* ChatBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495EA2632B6375A400A1EB65 /* ChatBox.swift */; };
+		495EA2672B63775600A1EB65 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 495EA2662B63775600A1EB65 /* Alamofire */; };
+		495EA2692B6377A100A1EB65 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495EA2682B6377A000A1EB65 /* ChatModel.swift */; };
+		495EA26B2B6377CB00A1EB65 /* OpenAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495EA26A2B6377CB00A1EB65 /* OpenAI.swift */; };
+		495EA26D2B6377F300A1EB65 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495EA26C2B6377F300A1EB65 /* Keys.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		495EA2472B63746100A1EB65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 495EA2292B63745E00A1EB65 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 495EA2302B63745E00A1EB65;
+			remoteInfo = Dupelocater;
+		};
+		495EA2512B63746100A1EB65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 495EA2292B63745E00A1EB65 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 495EA2302B63745E00A1EB65;
+			remoteInfo = Dupelocater;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		495EA2312B63745E00A1EB65 /* Dupelocater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dupelocater.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		495EA2342B63745E00A1EB65 /* DupelocaterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DupelocaterApp.swift; sourceTree = "<group>"; };
+		495EA2362B63745E00A1EB65 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		495EA2382B63746100A1EB65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		495EA23B2B63746100A1EB65 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		495EA23D2B63746100A1EB65 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		495EA2402B63746100A1EB65 /* Dupelocater.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Dupelocater.xcdatamodel; sourceTree = "<group>"; };
+		495EA2462B63746100A1EB65 /* DupelocaterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DupelocaterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		495EA24A2B63746100A1EB65 /* DupelocaterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DupelocaterTests.swift; sourceTree = "<group>"; };
+		495EA2502B63746100A1EB65 /* DupelocaterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DupelocaterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		495EA2542B63746100A1EB65 /* DupelocaterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DupelocaterUITests.swift; sourceTree = "<group>"; };
+		495EA2562B63746100A1EB65 /* DupelocaterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DupelocaterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		495EA2632B6375A400A1EB65 /* ChatBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBox.swift; sourceTree = "<group>"; };
+		495EA2682B6377A000A1EB65 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
+		495EA26A2B6377CB00A1EB65 /* OpenAI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAI.swift; sourceTree = "<group>"; };
+		495EA26C2B6377F300A1EB65 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		495EA22E2B63745E00A1EB65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				495EA2672B63775600A1EB65 /* Alamofire in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		495EA2432B63746100A1EB65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		495EA24D2B63746100A1EB65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		495EA2282B63745E00A1EB65 = {
+			isa = PBXGroup;
+			children = (
+				495EA2332B63745E00A1EB65 /* Dupelocater */,
+				495EA2492B63746100A1EB65 /* DupelocaterTests */,
+				495EA2532B63746100A1EB65 /* DupelocaterUITests */,
+				495EA2322B63745E00A1EB65 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		495EA2322B63745E00A1EB65 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				495EA2312B63745E00A1EB65 /* Dupelocater.app */,
+				495EA2462B63746100A1EB65 /* DupelocaterTests.xctest */,
+				495EA2502B63746100A1EB65 /* DupelocaterUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		495EA2332B63745E00A1EB65 /* Dupelocater */ = {
+			isa = PBXGroup;
+			children = (
+				495EA2342B63745E00A1EB65 /* DupelocaterApp.swift */,
+				495EA2362B63745E00A1EB65 /* ContentView.swift */,
+				495EA2682B6377A000A1EB65 /* ChatModel.swift */,
+				495EA26A2B6377CB00A1EB65 /* OpenAI.swift */,
+				495EA26C2B6377F300A1EB65 /* Keys.swift */,
+				495EA2632B6375A400A1EB65 /* ChatBox.swift */,
+				495EA2382B63746100A1EB65 /* Assets.xcassets */,
+				495EA23D2B63746100A1EB65 /* Persistence.swift */,
+				495EA23F2B63746100A1EB65 /* Dupelocater.xcdatamodeld */,
+				495EA23A2B63746100A1EB65 /* Preview Content */,
+			);
+			path = Dupelocater;
+			sourceTree = "<group>";
+		};
+		495EA23A2B63746100A1EB65 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				495EA23B2B63746100A1EB65 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		495EA2492B63746100A1EB65 /* DupelocaterTests */ = {
+			isa = PBXGroup;
+			children = (
+				495EA24A2B63746100A1EB65 /* DupelocaterTests.swift */,
+			);
+			path = DupelocaterTests;
+			sourceTree = "<group>";
+		};
+		495EA2532B63746100A1EB65 /* DupelocaterUITests */ = {
+			isa = PBXGroup;
+			children = (
+				495EA2542B63746100A1EB65 /* DupelocaterUITests.swift */,
+				495EA2562B63746100A1EB65 /* DupelocaterUITestsLaunchTests.swift */,
+			);
+			path = DupelocaterUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		495EA2302B63745E00A1EB65 /* Dupelocater */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 495EA25A2B63746100A1EB65 /* Build configuration list for PBXNativeTarget "Dupelocater" */;
+			buildPhases = (
+				495EA22D2B63745E00A1EB65 /* Sources */,
+				495EA22E2B63745E00A1EB65 /* Frameworks */,
+				495EA22F2B63745E00A1EB65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Dupelocater;
+			packageProductDependencies = (
+				495EA2662B63775600A1EB65 /* Alamofire */,
+			);
+			productName = Dupelocater;
+			productReference = 495EA2312B63745E00A1EB65 /* Dupelocater.app */;
+			productType = "com.apple.product-type.application";
+		};
+		495EA2452B63746100A1EB65 /* DupelocaterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 495EA25D2B63746100A1EB65 /* Build configuration list for PBXNativeTarget "DupelocaterTests" */;
+			buildPhases = (
+				495EA2422B63746100A1EB65 /* Sources */,
+				495EA2432B63746100A1EB65 /* Frameworks */,
+				495EA2442B63746100A1EB65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				495EA2482B63746100A1EB65 /* PBXTargetDependency */,
+			);
+			name = DupelocaterTests;
+			productName = DupelocaterTests;
+			productReference = 495EA2462B63746100A1EB65 /* DupelocaterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		495EA24F2B63746100A1EB65 /* DupelocaterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 495EA2602B63746100A1EB65 /* Build configuration list for PBXNativeTarget "DupelocaterUITests" */;
+			buildPhases = (
+				495EA24C2B63746100A1EB65 /* Sources */,
+				495EA24D2B63746100A1EB65 /* Frameworks */,
+				495EA24E2B63746100A1EB65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				495EA2522B63746100A1EB65 /* PBXTargetDependency */,
+			);
+			name = DupelocaterUITests;
+			productName = DupelocaterUITests;
+			productReference = 495EA2502B63746100A1EB65 /* DupelocaterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		495EA2292B63745E00A1EB65 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					495EA2302B63745E00A1EB65 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					495EA2452B63746100A1EB65 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 495EA2302B63745E00A1EB65;
+					};
+					495EA24F2B63746100A1EB65 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 495EA2302B63745E00A1EB65;
+					};
+				};
+			};
+			buildConfigurationList = 495EA22C2B63745E00A1EB65 /* Build configuration list for PBXProject "Dupelocater" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 495EA2282B63745E00A1EB65;
+			packageReferences = (
+				495EA2652B63775500A1EB65 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
+			productRefGroup = 495EA2322B63745E00A1EB65 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				495EA2302B63745E00A1EB65 /* Dupelocater */,
+				495EA2452B63746100A1EB65 /* DupelocaterTests */,
+				495EA24F2B63746100A1EB65 /* DupelocaterUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		495EA22F2B63745E00A1EB65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				495EA23C2B63746100A1EB65 /* Preview Assets.xcassets in Resources */,
+				495EA2392B63746100A1EB65 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		495EA2442B63746100A1EB65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		495EA24E2B63746100A1EB65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		495EA22D2B63745E00A1EB65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				495EA2642B6375A400A1EB65 /* ChatBox.swift in Sources */,
+				495EA26D2B6377F300A1EB65 /* Keys.swift in Sources */,
+				495EA26B2B6377CB00A1EB65 /* OpenAI.swift in Sources */,
+				495EA2412B63746100A1EB65 /* Dupelocater.xcdatamodeld in Sources */,
+				495EA23E2B63746100A1EB65 /* Persistence.swift in Sources */,
+				495EA2372B63745E00A1EB65 /* ContentView.swift in Sources */,
+				495EA2352B63745E00A1EB65 /* DupelocaterApp.swift in Sources */,
+				495EA2692B6377A100A1EB65 /* ChatModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		495EA2422B63746100A1EB65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				495EA24B2B63746100A1EB65 /* DupelocaterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		495EA24C2B63746100A1EB65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				495EA2552B63746100A1EB65 /* DupelocaterUITests.swift in Sources */,
+				495EA2572B63746100A1EB65 /* DupelocaterUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		495EA2482B63746100A1EB65 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 495EA2302B63745E00A1EB65 /* Dupelocater */;
+			targetProxy = 495EA2472B63746100A1EB65 /* PBXContainerItemProxy */;
+		};
+		495EA2522B63746100A1EB65 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 495EA2302B63745E00A1EB65 /* Dupelocater */;
+			targetProxy = 495EA2512B63746100A1EB65 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		495EA2582B63746100A1EB65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		495EA2592B63746100A1EB65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		495EA25B2B63746100A1EB65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Dupelocater/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jayla.Dupelocater;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		495EA25C2B63746100A1EB65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Dupelocater/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jayla.Dupelocater;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		495EA25E2B63746100A1EB65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jayla.DupelocaterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dupelocater.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Dupelocater";
+			};
+			name = Debug;
+		};
+		495EA25F2B63746100A1EB65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jayla.DupelocaterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dupelocater.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Dupelocater";
+			};
+			name = Release;
+		};
+		495EA2612B63746100A1EB65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jayla.DupelocaterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Dupelocater;
+			};
+			name = Debug;
+		};
+		495EA2622B63746100A1EB65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jayla.DupelocaterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Dupelocater;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		495EA22C2B63745E00A1EB65 /* Build configuration list for PBXProject "Dupelocater" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				495EA2582B63746100A1EB65 /* Debug */,
+				495EA2592B63746100A1EB65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		495EA25A2B63746100A1EB65 /* Build configuration list for PBXNativeTarget "Dupelocater" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				495EA25B2B63746100A1EB65 /* Debug */,
+				495EA25C2B63746100A1EB65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		495EA25D2B63746100A1EB65 /* Build configuration list for PBXNativeTarget "DupelocaterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				495EA25E2B63746100A1EB65 /* Debug */,
+				495EA25F2B63746100A1EB65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		495EA2602B63746100A1EB65 /* Build configuration list for PBXNativeTarget "DupelocaterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				495EA2612B63746100A1EB65 /* Debug */,
+				495EA2622B63746100A1EB65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		495EA2652B63775500A1EB65 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		495EA2662B63775600A1EB65 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 495EA2652B63775500A1EB65 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		495EA23F2B63746100A1EB65 /* Dupelocater.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				495EA2402B63746100A1EB65 /* Dupelocater.xcdatamodel */,
+			);
+			currentVersion = 495EA2402B63746100A1EB65 /* Dupelocater.xcdatamodel */;
+			path = Dupelocater.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 495EA2292B63745E00A1EB65 /* Project object */;
+}
