@@ -1,7 +1,7 @@
 //
 //  ChatModel.swift
 //  Dupelocater
-//  Chat box model
+//  Chat box model.
 //  Created by Jayla Scott on 1/26/24.
 //
 
