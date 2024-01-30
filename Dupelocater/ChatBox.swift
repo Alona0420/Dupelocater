@@ -17,13 +17,17 @@ struct ChatBox: View {
                 }
             }
             HStack{
-                TextField("  Enter a message...", text: $chatModel.currInput)
+                TextField("Enter a message...", text: $chatModel.currInput)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding(.horizontal)
                 Button{
                     chatModel.sendChat()
                 }label: {
                     Text("Send     ")
                 }
+                .padding(.trailing)
             } //Hstack
+            .padding(.bottom)
         } //VStack
     } //View
     
@@ -31,6 +35,8 @@ struct ChatBox: View {
         HStack{
             if chat.role == .user { Spacer()}
             Text(chat.content)
+                .padding()
+                .background(chat.role == .user ? Color.purple : Color.gray.opacity(0.2))
             if chat.role == .assistant { Spacer()}
         }
     }

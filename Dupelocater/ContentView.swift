@@ -21,8 +21,9 @@ struct ContentView: View {
                 ChatBox()
             } label:{
                 HStack{
-                    Text("Lets DUPElicate!")
+                    Text("Lets DUPElocate!")
                         .fontWeight(.bold)
+                        .foregroundColor(.purple) 
                 }
             }
         }
