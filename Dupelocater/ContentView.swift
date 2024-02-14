@@ -10,24 +10,36 @@ import CoreData
 
 struct ContentView: View {
     var body: some View {
-        NavigationView{
-//            VStack {
-//                Image(systemName: "globe")
-//                    .imageScale(.large)
-//                    .foregroundColor(.accentColor)
-//                Text("Hello, world!")
-//            }
-            NavigationLink{
-                ChatBox()
-            } label:{
-                HStack{
-                    Text("Lets DUPElocate!")
-                        .fontWeight(.bold)
-                        .foregroundColor(.purple) 
+//        ZStack{
+//            Color.red
+        NavigationView {
+                    GeometryReader { geometry in
+                        Color("primary")
+                            .edgesIgnoringSafeArea(.all)
+                            .overlay(
+                                VStack {
+                                    Image("Logo")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                    
+                                    NavigationLink(destination: Text("ChatBox")) {
+                                        HStack {
+                                            Text("Lets DUPElocate!")
+                                                .fontWeight(.bold)
+                                                .foregroundColor(.white)
+                                        }
+                                        .padding()
+                                        .background(Color.red)
+                                        .cornerRadius(10)
+                                    }
+                                    .padding()
+                                }
+                            )
+                            .navigationBarHidden(true) // Hide the navigation bar
+                    }
                 }
-            }
-        }
-            .padding()
+                .navigationViewStyle(StackNavigationViewStyle())
+            
         }
     }
 //}
