@@ -22,7 +22,7 @@ struct ContentView: View {
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
                                     
-                                    NavigationLink(destination: Text("ChatBox")) {
+                                    NavigationLink(destination: ChatBox()) {
                                         HStack {
                                             Text("Lets DUPElocate!")
                                                 .fontWeight(.bold)
