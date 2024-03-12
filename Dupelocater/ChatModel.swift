@@ -13,13 +13,17 @@ extension ChatBox{
         @Published var chat: [Chat] = [Chat(id: UUID(), role: .system, content: "You are a personal shopping assistant tasked to find dupes for fashion and makeup products. You know nothing else outside of fashion and makeup finds.", createAt: Date())]
         //[Chat(id: UUID(), role: .system, content: "Welcome to your Dupelicator", createAt: Date())]
         @Published var currInput: String = ""
+        @Published var chatResults: [String] = [] // Publish chatResults directly
+        @Published var showSwipingFeature = false
+        @Published var areResultsAvailable = false
         
         private let openAI = OpenAI()
-        
+//        
         func sendChat() {
             let newMsg = Chat(id: UUID(), role: .user, content: currInput, createAt: Date() )
             chat.append(newMsg)
             currInput = ""
+            
             
             Task{
                 do{
@@ -34,12 +38,27 @@ extension ChatBox{
                     let receivedMessage = Chat(id: UUID(), role: recievedAIMessage.role, content: recievedAIMessage.content, createAt: Date())
                     await MainActor.run {
                         chat.append(receivedMessage)
+                        chatResults = [recievedAIMessage.content] // Update chatResults
+                        //chatResults = response.choices.map { $0.message.content } // Update chatResults with actual results content
+                        print("Chat results received:", chatResults)
+                            areResultsAvailable = true // Set to true when results are available
+                        
                     }
                 } catch{
                     print("Error Chat model: \(error)")}
                 
             } //Task
+            
+            // Simulated sending chat and receiving results
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        self.chatResults = ["Result 1", "Result 2", "Result 3"] // Example results
+                        print("Chat results updated:", self.chatResults)
+                        self.showSwipingFeature = true // Activate navigation to SwipingFeature
+                    }
         }
+        
+        
+
     }
     
 } //extension

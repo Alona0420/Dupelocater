@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E1D58172B7EC1D50098470E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1D58162B7EC1D50098470E /* CardView.swift */; };
+		3E6394452B870BFF0098A0BA /* SwipingFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6394442B870BFF0098A0BA /* SwipingFeature.swift */; };
 		495EA2352B63745E00A1EB65 /* DupelocaterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495EA2342B63745E00A1EB65 /* DupelocaterApp.swift */; };
 		495EA2372B63745E00A1EB65 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495EA2362B63745E00A1EB65 /* ContentView.swift */; };
 		495EA2392B63746100A1EB65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 495EA2382B63746100A1EB65 /* Assets.xcassets */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E1D58162B7EC1D50098470E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		3E6394442B870BFF0098A0BA /* SwipingFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingFeature.swift; sourceTree = "<group>"; };
 		495EA2312B63745E00A1EB65 /* Dupelocater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dupelocater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		495EA2342B63745E00A1EB65 /* DupelocaterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DupelocaterApp.swift; sourceTree = "<group>"; };
 		495EA2362B63745E00A1EB65 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -118,6 +122,8 @@
 				495EA23D2B63746100A1EB65 /* Persistence.swift */,
 				495EA23F2B63746100A1EB65 /* Dupelocater.xcdatamodeld */,
 				495EA23A2B63746100A1EB65 /* Preview Content */,
+				3E1D58162B7EC1D50098470E /* CardView.swift */,
+				3E6394442B870BFF0098A0BA /* SwipingFeature.swift */,
 			);
 			path = Dupelocater;
 			sourceTree = "<group>";
@@ -283,7 +289,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E6394452B870BFF0098A0BA /* SwipingFeature.swift in Sources */,
 				495EA2642B6375A400A1EB65 /* ChatBox.swift in Sources */,
+				3E1D58172B7EC1D50098470E /* CardView.swift in Sources */,
 				495EA26D2B6377F300A1EB65 /* Keys.swift in Sources */,
 				495EA26B2B6377CB00A1EB65 /* OpenAI.swift in Sources */,
 				495EA2412B63746100A1EB65 /* Dupelocater.xcdatamodeld in Sources */,
