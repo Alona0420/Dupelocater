@@ -81,6 +81,7 @@ struct ChatBox: View {
                 .padding()
                 .background(chat.role == .user ? Color("primaryRed") : Color.gray.opacity(0.2))
             if chat.role == .assistant { Spacer()}
+            if chat.role == .system{ Spacer()}
         }
     }
 }
