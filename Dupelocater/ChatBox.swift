@@ -22,6 +22,7 @@ struct ChatBox: View {
                 HStack{
                     TextField("Enter a message...", text: $chatModel.currInput)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding()
                         .padding(.horizontal)
                     Button{
                         //chatModel.sendChat()
@@ -42,7 +43,7 @@ struct ChatBox: View {
                                 //.padding()
                             HStack {
                                                Spacer()
-                                               Text("Processing...")
+                                               Text("Dupeing...")
                                                    .padding()
                                                    .background(Color.gray.opacity(0.2))
                                                    .cornerRadius(10)
@@ -51,7 +52,7 @@ struct ChatBox: View {
                                            .padding(.bottom)
                         }
         }
-        //.edgesIgnoringSafeArea(.all)
+        .edgesIgnoringSafeArea(.all)
     } //View
     
     func sendMessage() async {
@@ -79,7 +80,17 @@ struct ChatBox: View {
             if chat.role == .user { Spacer()}
             Text(chat.content)
                 .padding()
-                .background(chat.role == .user ? Color("primaryRed") : Color.gray.opacity(0.2))
+                .background(chat.role == .user ? Color("chatBox") : Color.gray.opacity(0.2), in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+//                .overlay(alignment: .bottomLeading){
+//                    Image(systemName: "arrowtriangle.down.fill")
+//                        .font(.title)
+//                        .rotationEffect(.degrees(300))
+//                        .offset(x:30, y:10)
+//                        .foregroundColor(Color("primaryRed"))
+//                }
+                .padding([.top], 45)
+                .padding([.trailing], 6)
+                //.padding(.vertical)
             if chat.role == .assistant { Spacer()}
             if chat.role == .system{ Spacer()}
         }

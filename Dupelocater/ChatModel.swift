@@ -10,7 +10,7 @@ extension ChatBox{
     class ViewModel: ObservableObject{
         //@Published var chat: [Chat] = [] //for gpt3.5
         //for gpt 4
-        @Published var chat: [Chat] = [Chat(id: UUID(), role: .system, content: "You are a personal shopping assistant tasked to find dupes for fashion and makeup products. You know nothing else outside of fashion and makeup finds.", createAt: Date())]
+        @Published var chat: [Chat] = [Chat(id: UUID(), role: .system, content: "You are a personal shopping assistant tasked to find dupes for fashion and makeup products with listed prices and url links included. You know nothing else outside of fashion and makeup finds.", createAt: Date())]
         //[Chat(id: UUID(), role: .system, content: "Welcome to your Dupelicator", createAt: Date())]
         @Published var currInput: String = ""
         
