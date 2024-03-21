@@ -15,6 +15,9 @@ struct ProductCard {
     // Add other properties as needed
 }
 
+
+
+
 struct ChatBox: View {
     @ObservedObject var chatModel = ViewModel()
     @State private var isWaitingForResponse = false // Flag to track whether the response is being fetched
@@ -45,6 +48,14 @@ struct ChatBox: View {
                         .padding(.trailing)
                     } //Hstack
                     .padding(.bottom)
+                    
+//                    NavigationLink(
+//                                            destination: ProductCardPage(productCards: chatModel.productCards),
+//                                            isActive: $chatModel.isShowingProductCards,
+//                                            label: { EmptyView() }
+//                                        )
+                                        //.hidden()
+                    
                 } //VStack
                 //.edgesIgnoringSafeArea(.all)
                 // Show loading indicator while waiting for response
@@ -63,8 +74,21 @@ struct ChatBox: View {
                 }
             }
             .edgesIgnoringSafeArea(.all)
+//            .onReceive(chatModel.$isShowingProductCards) { isShowing in
+//                            if isShowing {
+//                                NavigationLink(
+//                                    destination: ProductCardPage(productCards: chatModel.productCards),
+//                                    isActive: $chatModel.isShowingProductCards,
+//                                    label: { EmptyView() }
+//                                )
+//                                //.hidden()
+//                            }
+//                        }
+
         }
-        .navigationBarTitle(Text("SwiftUI"), displayMode: .inline)
+        .navigationBarHidden(false) // Hide the navigation bar
+        .navigationBarTitle(Text("Dupelocator"), displayMode: .inline)
+
         
         
     } //View
@@ -77,17 +101,23 @@ struct ChatBox: View {
                     if success {
                         // Handle success case
                         print("Message sent successfully")
+                        if let response = chatModel.response {
+                            let productCards = parseAPIResponse(response: response)
+                                            chatModel.productCards = productCards
+                                            chatModel.showProductCards() // Activate the flag to show product cards page
+                                        }
                     } else {
                         // Handle failure case
                         print("Failed to send message")
                     }
                 }
+            
             } catch {
                 print("Error sending message: \(error)")
             }
 
             isWaitingForResponse = false // Set flag to false when response is received
-        }
+    }
     
     func chatView(chat: Chat) -> some View{
         HStack{

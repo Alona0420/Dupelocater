@@ -10,29 +10,25 @@ import CoreData
 
 struct DrawerContent: View {
     var body: some View {
-        ZStack{
-            //NavigationView {
-                Color("primaryRed")
-                //            Text("Lets DUPElocate!")
-                //                .fontWeight(.bold)
-                //                .foregroundColor(.white)
-                //                .padding([.vertical], 65)
-                            Text("Products!")
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                
-                //                    NavigationLink {
-                //                        ChatBox()
-                //                    } label: {
-                //                        Text("Products")
-                //                            .fontWeight(.bold)
-                //                            .foregroundColor(.white)
-                //                    }
-               
-            //} //ZStack
-            
-            
-        }
+        NavigationView {
+                    ZStack {
+                        Color("primaryRed")
+                            .ignoresSafeArea()
+                        
+                        VStack(alignment: .leading, spacing: 20) {
+                            //NavigationLink(destination: ProductCardPage ) { // Navigate to ProductsView
+                                Text("Products!")
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                                    .font(.title)
+                                    .padding()
+                            //}
+                            
+                            Spacer()
+                        }
+                        .navigationBarHidden(true) // Hide the navigation bar
+                    }
+                }
     }
 }
 
@@ -82,7 +78,7 @@ struct ContentView: View {
                             }
                         )
                         .navigationBarHidden(false) // Hide the navigation bar
-                        .navigationBarTitle(Text("SwiftUI"), displayMode: .inline)
+                        .navigationBarTitle(Text("Dupelocator"), displayMode: .inline)
                         .navigationBarItems(leading: Button(action: {
                                                 self.isDrawerOpen.toggle()
                                             }) {

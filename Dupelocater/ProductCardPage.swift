@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct ProductCardPage: View {
+    @State var isDrawerOpen: Bool = false
     var productCards: [ProductCard]
     var body: some View {
-        
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-        ScrollView {
+        NavigationView {
+            ZStack{
+                Color("primary")
+                //Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+                ScrollView {
                     VStack(spacing: 10) {
                         ForEach(productCards, id: \.productName) { card in
                             ProductCardView(productCard: card)
@@ -23,8 +26,15 @@ struct ProductCardPage: View {
                         }
                     }
                     .padding()
-                }
-                .navigationTitle("Product Cards")
+                } //ScrollView
+                .padding(75)
+                .navigationBarTitle(Text("Product Cards"), displayMode: .inline)
+                .navigationBarHidden(false) // Hide the navigation bar
+            }
+            .edgesIgnoringSafeArea(.all)
+        }
+//        NavigationDrawer(isOpen: self.$isDrawerOpen)
+//        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
@@ -34,7 +44,7 @@ struct ProductCardView: View {
     var body: some View {
         VStack {
             Text(productCard.productName)
-            Text("\(productCard.price)")
+            Text("$\(productCard.price)")
             // Display image, URL, and other details as needed
         }
         .padding()
