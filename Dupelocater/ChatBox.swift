@@ -7,52 +7,66 @@
 
 import SwiftUI
 import UIKit
+
+struct ProductCard {
+    let productName: String
+    let price: Double
+    let uRL: URL
+    // Add other properties as needed
+}
+
 struct ChatBox: View {
     @ObservedObject var chatModel = ViewModel()
     @State private var isWaitingForResponse = false // Flag to track whether the response is being fetched
     var body: some View {
-        ZStack{
-            Color("primary")
-            VStack{
-                ScrollView{
-                    ForEach(chatModel.chat.filter({$0.role != .system}), id: \.id){ chat in
-                        chatView(chat: chat)
-                    }
-                }
-                HStack{
-                    TextField("Enter a message...", text: $chatModel.currInput)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
-                        .padding(.horizontal)
-                    Button{
-                        //chatModel.sendChat()
-                        Task {
-                                                await sendMessage()
-                                            }
-                    }label: {
-                        Text("Send     ")
-                    }
-                    .padding(.trailing)
-                } //Hstack
-                .padding(.bottom)
-            } //VStack
-            //.edgesIgnoringSafeArea(.all)
-            // Show loading indicator while waiting for response
-                        if isWaitingForResponse {
-                            //ProgressView("Waiting for response...")
-                                //.padding()
-                            HStack {
-                                               Spacer()
-                                               Text("Dupeing...")
-                                                   .padding()
-                                                   .background(Color.gray.opacity(0.2))
-                                                   .cornerRadius(10)
-                                               Spacer()
-                                           }
-                                           .padding(.bottom)
+        NavigationView {
+            ZStack{
+                Color("primary")
+                VStack{
+                    
+                    ScrollView{
+                        ForEach(chatModel.chat.filter({$0.role != .system}), id: \.id){ chat in
+                            chatView(chat: chat)
                         }
+                    }
+                    HStack{
+                        TextField("Enter a message...", text: $chatModel.currInput)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding()
+                            .padding(.horizontal)
+                        Button{
+                            //chatModel.sendChat()
+                            Task {
+                                await sendMessage()
+                            }
+                        }label: {
+                            Text("Send     ")
+                        }
+                        .padding(.trailing)
+                    } //Hstack
+                    .padding(.bottom)
+                } //VStack
+                //.edgesIgnoringSafeArea(.all)
+                // Show loading indicator while waiting for response
+                if isWaitingForResponse {
+                    //ProgressView("Waiting for response...")
+                    //.padding()
+                    HStack {
+                        Spacer()
+                        Text("Dupeing...")
+                            .padding()
+                            .background(Color.gray.opacity(0.2))
+                            .cornerRadius(10)
+                        Spacer()
+                    }
+                    .padding(.bottom)
+                }
+            }
+            .edgesIgnoringSafeArea(.all)
         }
-        .edgesIgnoringSafeArea(.all)
+        .navigationBarTitle(Text("SwiftUI"), displayMode: .inline)
+        
+        
     } //View
     
     func sendMessage() async {
@@ -78,39 +92,26 @@ struct ChatBox: View {
     func chatView(chat: Chat) -> some View{
         HStack{
             if chat.role == .user { Spacer() }
-            // Use a Link view for clickable links
+           
+            AttributedText(chat.content)
+                .padding()
+                .background(chat.role == .user ? Color("chatBox") : Color.gray.opacity(0.2), in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+//                .overlay(alignment: .bottomLeading){
+//                    Image(systemName: "arrowtriangle.down.fill")
+//                        .font(.title)
+//                        .rotationEffect(.degrees(300))
+//                        .offset(x:30, y:10)
+//                        .foregroundColor(Color("primaryRed"))
+//                }
+                .padding([.top], 45)
+                .padding([.trailing], 6)
+                .gesture(TapGesture().onEnded {
+                    if chat.role == .assistant {
                         if let url = URL(string: chat.content), UIApplication.shared.canOpenURL(url) {
-                            Link(chat.content, destination: url)
-                                .padding()
-                                .background(chat.role == .user ? Color("chatBox") : Color.gray.opacity(0.2), in: RoundedRectangle(cornerRadius: 16, style: .continuous))
-                                .padding([.top], 45)
-                                .padding([.trailing], 6)
-                        } else {
-                            Text(chat.content)
-                                .padding()
-                                .background(chat.role == .user ? Color("chatBox") : Color.gray.opacity(0.2), in: RoundedRectangle(cornerRadius: 16, style: .continuous))
-                                .padding([.top], 45)
-                                .padding([.trailing], 6)
+                            UIApplication.shared.open(url)
                         }
-//            AttributedText(chat.content)
-//                .padding()
-//                .background(chat.role == .user ? Color("chatBox") : Color.gray.opacity(0.2), in: RoundedRectangle(cornerRadius: 16, style: .continuous))
-////                .overlay(alignment: .bottomLeading){
-////                    Image(systemName: "arrowtriangle.down.fill")
-////                        .font(.title)
-////                        .rotationEffect(.degrees(300))
-////                        .offset(x:30, y:10)
-////                        .foregroundColor(Color("primaryRed"))
-////                }
-//                .padding([.top], 45)
-//                .padding([.trailing], 6)
-//                .gesture(TapGesture().onEnded {
-//                    if chat.role == .assistant {
-//                        if let url = URL(string: chat.content), UIApplication.shared.canOpenURL(url) {
-//                            UIApplication.shared.open(url)
-//                        }
-//                    }
-//                                })
+                    }
+                                })
                 //.padding(.vertical)
             if chat.role == .assistant { Spacer()}
             if chat.role == .system{ Spacer()}
@@ -147,3 +148,21 @@ struct AttributedText: View {
             }
     }
 }
+
+
+//struct ProductCardView: View {
+//    let productCard: ProductCard
+//    
+//    var body: some View {
+//        VStack {
+//            Text(productCard.productName)
+//            Text("\(productCard.price)")
+//            // Display image, URL, and other details as needed
+//        }
+//        .padding()
+//        .background(Color.white)
+//        .cornerRadius(10)
+//        .shadow(radius: 5)
+//        .padding()
+//    }
+//}

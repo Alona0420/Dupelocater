@@ -8,6 +8,11 @@
 import Foundation
 extension ChatBox{
     class ViewModel: ObservableObject{
+        @Published var isShowingProductCards = false
+
+           func showProductCards() {
+               isShowingProductCards = true
+           }
         //@Published var chat: [Chat] = [] //for gpt3.5
         //for gpt 4
         @Published var chat: [Chat] = [Chat(id: UUID(), role: .system, content: "You are a personal shopping assistant tasked to find dupes for fashion and makeup products with listed prices and url links included. You know nothing else outside of fashion and makeup finds.", createAt: Date())]
@@ -24,6 +29,7 @@ extension ChatBox{
                     chat.append(systemMessage)
             do {
                     let response = try await openAI.sendChat(chat: chat)
+                    //parseAndSendResponse(response: response)
                     print(response)
 
                     guard let receivedAIMessage = response.choices.first?.message else {
@@ -64,6 +70,31 @@ extension ChatBox{
 //            } //Task
         } //func
     }
+    
+//    func parseAndSendResponse(response: String) {
+//            let productEntries = response.components(separatedBy: "\n\n")
+//
+//            for entry in productEntries {
+//                let components = entry.components(separatedBy: "\n   ")
+//                if components.count >= 3 {
+//                    let productName = components[0].replacingOccurrences(of: "**", with: "").trimmingCharacters(in: .whitespacesAndNewlines)
+//                    let description = components[1]
+//                    let priceString = components[2].replacingOccurrences(of: "Price: $", with: "").trimmingCharacters(in: .whitespacesAndNewlines)
+//                    if let price = Double(priceString), let urlRange = description.range(of: "\\(.*?\\)", options: .regularExpression) {
+//                        let url = description[urlRange].replacingOccurrences(of: "[\\[\\]()]", with: "", options: .regularExpression, range: nil)
+//
+//                        let productCard = ProductCard(
+//                            productName: productName,
+//                            price: price,
+    //                            uRL: URL(string: "https://example.com")! // Placeholder URL, replace with actual image URL if available
+//                            // Add other properties as needed
+//                        )
+//                        productCards.append(productCard)
+//                    }
+//                }
+//            }
+//        }
+
     
 } //extension
 

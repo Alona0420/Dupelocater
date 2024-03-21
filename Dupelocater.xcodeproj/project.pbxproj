@@ -21,6 +21,7 @@
 		495EA2692B6377A100A1EB65 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495EA2682B6377A000A1EB65 /* ChatModel.swift */; };
 		495EA26B2B6377CB00A1EB65 /* OpenAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495EA26A2B6377CB00A1EB65 /* OpenAI.swift */; };
 		495EA26D2B6377F300A1EB65 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495EA26C2B6377F300A1EB65 /* Keys.swift */; };
+		49AC39482BABDE2800238EFA /* ProductCardPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AC39472BABDE2800238EFA /* ProductCardPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		495EA2682B6377A000A1EB65 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		495EA26A2B6377CB00A1EB65 /* OpenAI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAI.swift; sourceTree = "<group>"; };
 		495EA26C2B6377F300A1EB65 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		49AC39472BABDE2800238EFA /* ProductCardPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardPage.swift; sourceTree = "<group>"; };
 		49C8F6602B7C58C20045183A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +122,7 @@
 				495EA23D2B63746100A1EB65 /* Persistence.swift */,
 				495EA23F2B63746100A1EB65 /* Dupelocater.xcdatamodeld */,
 				495EA23A2B63746100A1EB65 /* Preview Content */,
+				49AC39472BABDE2800238EFA /* ProductCardPage.swift */,
 			);
 			path = Dupelocater;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			files = (
 				495EA2642B6375A400A1EB65 /* ChatBox.swift in Sources */,
 				495EA26D2B6377F300A1EB65 /* Keys.swift in Sources */,
+				49AC39482BABDE2800238EFA /* ProductCardPage.swift in Sources */,
 				495EA26B2B6377CB00A1EB65 /* OpenAI.swift in Sources */,
 				495EA2412B63746100A1EB65 /* Dupelocater.xcdatamodeld in Sources */,
 				495EA23E2B63746100A1EB65 /* Persistence.swift in Sources */,
