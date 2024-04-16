@@ -51,6 +51,7 @@ struct NavigationDrawer: View {
 
 struct ContentView: View {
     @State var isDrawerOpen: Bool = false
+    @ObservedObject var viewModel: ChatBox.ViewModel
     var body: some View {
         ZStack{
             //            Color.red
@@ -75,15 +76,27 @@ struct ContentView: View {
                                     .cornerRadius(10)
                                 }
                                 .padding()
+//                                NavigationLink(destination: ProductCardViews(viewModel: viewModel) ) {
+//                                    HStack {
+//                                        Text("Product Cards")
+//                                            .fontWeight(.bold)
+//                                            .foregroundColor(.white)
+//                                    }
+//                                    .padding()
+//                                    .background(Color.red)
+//                                    .cornerRadius(10)
+//                                }
+                                .padding()
+                                
                             }
                         )
                         .navigationBarHidden(false) // Hide the navigation bar
-                        .navigationBarTitle(Text("Dupelocator"), displayMode: .inline)
-                        .navigationBarItems(leading: Button(action: {
-                                                self.isDrawerOpen.toggle()
-                                            }) {
-                                                Image(systemName: "sidebar.left")
-                                            })
+//                        .navigationBarTitle(Text("Dupelocator"), displayMode: .inline)
+//                        .navigationBarItems(leading: Button(action: {
+//                                                self.isDrawerOpen.toggle()
+//                                            }) {
+//                                                Image(systemName: "sidebar.left")
+//                                            })
                     
                 }
             }
@@ -96,7 +109,8 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        let viewModel = ChatBox.ViewModel()
+        ContentView(viewModel: viewModel)
     }
 }
 
