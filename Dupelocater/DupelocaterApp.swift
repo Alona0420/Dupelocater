@@ -10,10 +10,11 @@ import SwiftUI
 @main
 struct DupelocaterApp: App {
     let persistenceController = PersistenceController.shared
-
+    let viewModel = ChatBox.ViewModel() // Initialize your ViewModel here
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: viewModel)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

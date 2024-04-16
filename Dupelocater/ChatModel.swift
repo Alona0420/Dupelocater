@@ -8,14 +8,14 @@
 import Foundation
 extension ChatBox{
     class ViewModel: ObservableObject{
-        @Published var isShowingProductCards = true
-
-           func showProductCards() {
-               isShowingProductCards = true
-           }
+        @Published var isShowingProductCards = false
+        
+        func showProductCards() {
+            isShowingProductCards = true
+        }
         //@Published var chat: [Chat] = [] //for gpt3.5
         //for gpt 4
-        @Published var chat: [Chat] = [Chat(id: UUID(), role: .system, content: "You are a personal shopping assistant tasked to find dupes for fashion and makeup products with listed prices and url links included. You know nothing else outside of fashion and makeup finds.", createAt: Date())]
+        @Published var chat: [Chat] = [Chat(id: UUID(), role: .system, content: "You are a personal shopping assistant tasked to find dupes for fashion and makeup products with listed prices and url links included. If users ask for sustainable options give them sustainable dupes. You know nothing else outside of fashion and makeup finds.", createAt: Date())]
         //[Chat(id: UUID(), role: .system, content: "Welcome to your Dupelicator", createAt: Date())]
         @Published var currInput: String = ""
         @Published var response: String? // Add a property to store the API response
@@ -27,55 +27,43 @@ extension ChatBox{
             chat.append(newMsg)
             currInput = ""
             let systemMessage = Chat.systemMessage(content: "Processing...")
-                    chat.append(systemMessage)
+            chat.append(systemMessage)
             do {
-                    let response = try await openAI.sendChat(chat: chat)
-                    //parseAndSendResponse(response: response)
-                    print(response)
-
-                    guard let receivedAIMessage = response.choices.first?.message else {
-                        print("No received messages") //error checking
-                        completion(true)
-                        return
-                        //return false
-                    }
-
-                    let receivedMessage = Chat(id: UUID(), role: receivedAIMessage.role, content: receivedAIMessage.content, createAt: Date())
-                    chat.append(receivedMessage)
-                completion(true)
-                    //return true
-                } catch {
-                    print("Error Chat model: \(error)")
-                    completion(false)
+                let response = try await openAI.sendChat(chat: chat)
+                //parseAndSendResponse(response: response)
+                print("Received response:",response)
+                
+                guard let receivedAIMessage = response.choices.first?.message else {
+                    print("No received messages") //error checking
+                    completion(true)
+                    return
                     //return false
                 }
-            
-            
-//            Task{
-//                do{
-//                    let response = try await openAI.sendChat(chat: chat)
-//                    print(response)
-////                    let responseData = try JSONSerialization.data(withJSONObject: response, options: .prettyPrinted)
-////                    print("Response Data: \(String(data: responseData, encoding: .utf8) ?? "")")
-//                    guard let recievedAIMessage = response.choices.first?.message else {
-//                        print("No received messages") //error checking
-//                        return
-//                    }
-//                    let receivedMessage = Chat(id: UUID(), role: recievedAIMessage.role, content: recievedAIMessage.content, createAt: Date())
-//                    await MainActor.run {
-//                        chat.append(receivedMessage)
-//                    }
-//                } catch{
-//                    print("Error Chat model: \(error)")}
-//
-//            } //Task
-        } //func
-    }
-    
-    func parseAPIResponse(response: String) -> [ProductCard] {
-            var productCards: [ProductCard] = []
+                
+                let receivedMessage = Chat(id: UUID(), role: receivedAIMessage.role, content: receivedAIMessage.content, createAt: Date())
+                chat.append(receivedMessage)
+                
+                // Pass the received message content to parseAPIResponse
+                let productCards = parseAPIResponse(response: receivedAIMessage.content)
+                print("Parsed product cards:", productCards) // Print the parsed product cards for debugging
+                        
+                
+                completion(true)
+                //return true
+            } catch {
+                print("Error Chat model: \(error)")
+                completion(false)
+                //return false
+            }
+        }
+        
+        func parseAPIResponse(response: String) -> [ProductCards] {
+            var productCards: [ProductCards] = []
+            // Print the response for debugging
+            print("Response to parse:", response)
             
             let productEntries = response.components(separatedBy: "\n\n")
+            print("Product entries", productEntries)
             
             for entry in productEntries {
                 let components = entry.components(separatedBy: "\n   ")
@@ -83,27 +71,67 @@ extension ChatBox{
                     let productName = components[0].replacingOccurrences(of: "**", with: "").trimmingCharacters(in: .whitespacesAndNewlines)
                     let description = components[1]
                     let priceString = components[2].replacingOccurrences(of: "Price: $", with: "").trimmingCharacters(in: .whitespacesAndNewlines)
-                    if let price = Double(priceString), let urlRange = description.range(of: "\\(.*?\\)", options: .regularExpression) {
-                        let url = description[urlRange].replacingOccurrences(of: "[\\[\\]()]", with: "", options: .regularExpression, range: nil)
-                        
-                        let productCard = ProductCard(
-                            productName: productName,
-                            price: price,
-                            uRL: URL(string: url)! // Assuming URL is in correct format
+                    
+                    // Replace the URL extraction logic with the actual URL from the response
+                    let url = "https://example.com/sample_product_image.jpg" // Replace this with the actual URL from the response
+                    
+                    if let price = Double(priceString), let imageURL = URL(string: url) {
+                        let productCard = ProductCards(
+                            name: productName,
+                            imageURL: imageURL,
+                            cost: price
                             // Add other properties as needed
                         )
                         productCards.append(productCard)
+                        print("Parsed product cards in parse:", productCards) // Print the parsed product cards for debugging
                     }
                 }
             }
             
             return productCards
-        }
+            
+        } //parseAPIResp
+        
+    }
     
+}//viewModel
+    
+    
+//    func parseAPIResponse(response: String) -> [ProductCards] {
+//            var productCards: [ProductCards] = []
+//
+//            let productEntries = response.components(separatedBy: "\n\n")
+//
+//            for entry in productEntries {
+//                let components = entry.components(separatedBy: "\n   ")
+//                if components.count >= 3 {
+//                    let productName = components[0].replacingOccurrences(of: "**", with: "").trimmingCharacters(in: .whitespacesAndNewlines)
+//                    let description = components[1]
+//                    let priceString = components[2].replacingOccurrences(of: "Price: $", with: "").trimmingCharacters(in: .whitespacesAndNewlines)
+//                    if let price = Double(priceString), let urlRange = description.range(of: "\\(.*?\\)", options: .regularExpression) {
+//                        let url = description[urlRange].replacingOccurrences(of: "[\\[\\]()]", with: "", options: .regularExpression, range: nil)
+//
+//                        let productCard = ProductCards(
+//                            name: productName,
+//                            imageURL: URL(string: url)!,
+//                            cost: price
+//                             // Assuming URL is in correct format
+//                            // Add other properties as needed
+//                        )
+//                        productCards.append(productCard)
+//                    }
+//                }
+//            }
+//
+//            return productCards
+//        }
+ 
+//extension
 
 
-    
-} //extension
+
+
+
 
 struct Chat: Decodable {
     let id: UUID

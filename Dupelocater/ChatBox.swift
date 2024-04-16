@@ -46,6 +46,12 @@ struct ChatBox: View {
                             Text("Send     ")
                         }
                         .padding(.trailing)
+//                        Button( action: {
+//                            ProductCardPage(productCards: chatModel.productCards); chatModel.isShowingProductCards
+//                            
+//                            }){
+//                            Text("Products     ")
+//                        }
                     } //Hstack
                     .padding(.bottom)
                     
@@ -54,7 +60,7 @@ struct ChatBox: View {
 //                                            isActive: $chatModel.isShowingProductCards,
 //                                            label: { EmptyView() }
 //                                        )
-                                        //.hidden()
+//                                        .hidden()
                     
                 } //VStack
                 //.edgesIgnoringSafeArea(.all)
@@ -101,15 +107,19 @@ struct ChatBox: View {
                     if success {
                         // Handle success case
                         print("Message sent successfully")
-                        if let response = chatModel.response {
-                            let productCards = parseAPIResponse(response: response)
-                                            chatModel.productCards = productCards
-                                            chatModel.showProductCards() // Activate the flag to show product cards page
-                                        }
-                    } else {
-                        // Handle failure case
-                        print("Failed to send message")
+                        
+//                        if let response = chatModel.response {
+//                            let productCards = parseAPIResponse(response: response)
+//                                            chatModel.productCards = productCards
+//                                            chatModel.showProductCards() // Activate the flag to show product cards page
+//                            print("Response recieved")
+//                            //print(productCard.productName)
+//                            }
                     }
+//                    else {
+//                        // Handle failure case
+//                        print("Failed to send message")
+//                    }
                 }
             
             } catch {

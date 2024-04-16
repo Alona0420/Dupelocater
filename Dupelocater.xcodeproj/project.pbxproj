@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4957BF632BC7585A0060984F /* ProductCardViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957BF622BC7585A0060984F /* ProductCardViews.swift */; };
 		495EA2352B63745E00A1EB65 /* DupelocaterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495EA2342B63745E00A1EB65 /* DupelocaterApp.swift */; };
 		495EA2372B63745E00A1EB65 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495EA2362B63745E00A1EB65 /* ContentView.swift */; };
 		495EA2392B63746100A1EB65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 495EA2382B63746100A1EB65 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4957BF622BC7585A0060984F /* ProductCardViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardViews.swift; sourceTree = "<group>"; };
 		495EA2312B63745E00A1EB65 /* Dupelocater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dupelocater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		495EA2342B63745E00A1EB65 /* DupelocaterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DupelocaterApp.swift; sourceTree = "<group>"; };
 		495EA2362B63745E00A1EB65 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				495EA23F2B63746100A1EB65 /* Dupelocater.xcdatamodeld */,
 				495EA23A2B63746100A1EB65 /* Preview Content */,
 				49AC39472BABDE2800238EFA /* ProductCardPage.swift */,
+				4957BF622BC7585A0060984F /* ProductCardViews.swift */,
 			);
 			path = Dupelocater;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				495EA26D2B6377F300A1EB65 /* Keys.swift in Sources */,
 				49AC39482BABDE2800238EFA /* ProductCardPage.swift in Sources */,
 				495EA26B2B6377CB00A1EB65 /* OpenAI.swift in Sources */,
+				4957BF632BC7585A0060984F /* ProductCardViews.swift in Sources */,
 				495EA2412B63746100A1EB65 /* Dupelocater.xcdatamodeld in Sources */,
 				495EA23E2B63746100A1EB65 /* Persistence.swift in Sources */,
 				495EA2372B63745E00A1EB65 /* ContentView.swift in Sources */,

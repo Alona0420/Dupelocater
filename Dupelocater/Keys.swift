@@ -9,5 +9,5 @@ import Foundation
 
 
 enum Keys{
-    static let openAIKey = ""
+    static let openAIKey = "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"
 }
