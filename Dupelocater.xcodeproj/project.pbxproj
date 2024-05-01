@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E2C20662BE302250093ECE9 /* GentyDemo-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3E2C20632BE302250093ECE9 /* GentyDemo-Regular.otf */; };
+		3E2C20672BE302250093ECE9 /* Awesome Lathusca.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E2C20642BE302250093ECE9 /* Awesome Lathusca.ttf */; };
+		3E2C20682BE302250093ECE9 /* DMSans-Regular-BF64376d323f095.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3E2C20652BE302250093ECE9 /* DMSans-Regular-BF64376d323f095.ttf */; };
 		4957BF632BC7585A0060984F /* ProductCardViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4957BF622BC7585A0060984F /* ProductCardViews.swift */; };
 		495EA2352B63745E00A1EB65 /* DupelocaterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495EA2342B63745E00A1EB65 /* DupelocaterApp.swift */; };
 		495EA2372B63745E00A1EB65 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495EA2362B63745E00A1EB65 /* ContentView.swift */; };
@@ -43,6 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E2C20632BE302250093ECE9 /* GentyDemo-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GentyDemo-Regular.otf"; path = "../../../../Downloads/GentyDemo-Regular.otf"; sourceTree = "<group>"; };
+		3E2C20642BE302250093ECE9 /* Awesome Lathusca.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Awesome Lathusca.ttf"; path = "../../../../Downloads/Awesome Lathusca.ttf"; sourceTree = "<group>"; };
+		3E2C20652BE302250093ECE9 /* DMSans-Regular-BF64376d323f095.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DMSans-Regular-BF64376d323f095.ttf"; path = "../../../../Downloads/DMSans-Regular-BF64376d323f095.ttf"; sourceTree = "<group>"; };
 		4957BF622BC7585A0060984F /* ProductCardViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardViews.swift; sourceTree = "<group>"; };
 		495EA2312B63745E00A1EB65 /* Dupelocater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dupelocater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		495EA2342B63745E00A1EB65 /* DupelocaterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DupelocaterApp.swift; sourceTree = "<group>"; };
@@ -113,6 +119,9 @@
 		495EA2332B63745E00A1EB65 /* Dupelocater */ = {
 			isa = PBXGroup;
 			children = (
+				3E2C20642BE302250093ECE9 /* Awesome Lathusca.ttf */,
+				3E2C20652BE302250093ECE9 /* DMSans-Regular-BF64376d323f095.ttf */,
+				3E2C20632BE302250093ECE9 /* GentyDemo-Regular.otf */,
 				49C8F6602B7C58C20045183A /* Info.plist */,
 				495EA2342B63745E00A1EB65 /* DupelocaterApp.swift */,
 				495EA2362B63745E00A1EB65 /* ContentView.swift */,
@@ -267,6 +276,9 @@
 			files = (
 				495EA23C2B63746100A1EB65 /* Preview Assets.xcassets in Resources */,
 				495EA2392B63746100A1EB65 /* Assets.xcassets in Resources */,
+				3E2C20672BE302250093ECE9 /* Awesome Lathusca.ttf in Resources */,
+				3E2C20682BE302250093ECE9 /* DMSans-Regular-BF64376d323f095.ttf in Resources */,
+				3E2C20662BE302250093ECE9 /* GentyDemo-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
